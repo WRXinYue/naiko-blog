@@ -1,0 +1,4 @@
+<template>
+  hool
+  <!-- <RouterView /> -->
+</template>
