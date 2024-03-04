@@ -14,5 +14,35 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   theme: 'sakura',
 
+  themeConfig: {
+    prefixName: '',
+    siteName: 'Naiko',
+    banner: {
+      enable: true,
+      title: '',
+      cloud: {
+        enable: true,
+      },
+    },
+    sidebarShowOnPC:true,
+    sidebarPushMode:true,
+    pages: [
+      {
+        name: '我的小伙伴们',
+        url: '/links/',
+        icon: 'i-ri-genderless-line',
+        color: 'dodgerblue',
+      },
+      {
+        name: '喜欢的女孩子',
+        url: '/girls/',
+        icon: 'i-ri-women-line',
+        color: 'hotpink',
+      },
+    ],
 
+
+  },
+
+  unocss: { safelist },
 })

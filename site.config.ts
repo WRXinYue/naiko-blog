@@ -23,15 +23,9 @@ export default defineSiteConfig({
     },
     {
       name: 'GitHub',
-      link: 'https://github.com/YunYouJun',
+      link: '',
       icon: 'i-ri-github-line',
       color: '#6e5494',
-    },
-    {
-      name: '微博',
-      link: 'https://weibo.com/jizhideyunyoujun',
-      icon: 'i-ri-weibo-line',
-      color: '#E6162D',
     },
     {
       name: '豆瓣',
@@ -99,19 +93,19 @@ export default defineSiteConfig({
     methods: [
       {
         name: '支付宝',
-        url: 'https://cdn.yunyoujun.cn/img/donate/alipay-qrcode.jpg',
+        url: '',
         color: '#00A3EE',
         icon: 'i-ri-alipay-line',
       },
       {
         name: 'QQ 支付',
-        url: 'https://cdn.yunyoujun.cn/img/donate/qqpay-qrcode.png',
+        url: '',
         color: '#12B7F5',
         icon: 'i-ri-qq-line',
       },
       {
         name: '微信支付',
-        url: 'https://cdn.yunyoujun.cn/img/donate/wechatpay-qrcode.jpg',
+        url: '',
         color: '#2DC100',
         icon: 'i-ri-wechat-pay-line',
       },
