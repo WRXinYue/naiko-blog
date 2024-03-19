@@ -15,17 +15,22 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    prefixName: '',
-    siteName: 'Naiko',
+
+
     banner: {
-      enable: true,
       title: '',
-      cloud: {
-        enable: true,
-      },
+      motto: '',
+      urls: [
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
+        'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+      ],
+      style: '',
+      overlayBar: true,
     },
     sidebarShowOnPC:true,
     sidebarPushMode:true,
+
     pages: [
       {
         name: '我的小伙伴们',
