@@ -1,68 +1,71 @@
 <script setup>
+import { onMounted } from 'vue'
+
 import * as THREE from "three";
 
-// console.log(THREE);
 
-// 目标：了解three.js最基本的内容
+onMounted(() => {
+  // console.log(THREE);
 
-// 1、创建场景
-const scene = new THREE.Scene();
+  // 目标：了解three.js最基本的内容
 
-// 2、创建相机
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
+  // 1、创建场景
+  const scene = new THREE.Scene();
 
-// 设置相机位置
-camera.position.set(0, 0, 10);
-scene.add(camera);
+  // 2、创建相机
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
 
-// 添加物体
-// 创建几何体
-const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-// 根据几何体和材质创建物体
-const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-// 将几何体添加到场景中
-scene.add(cube);
+  // 设置相机位置
+  camera.position.set(0, 0, 10);
+  scene.add(camera);
 
-// 初始化渲染器
-const renderer = new THREE.WebGLRenderer();
-// 设置渲染的尺寸大小
-renderer.setSize(window.innerWidth, window.innerHeight);
-// console.log(renderer);
-// 将webgl渲染的canvas内容添加到body
-document.body.appendChild(renderer.domElement);
+  // 添加物体
+  // 创建几何体
+  const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+  const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+  // 根据几何体和材质创建物体
+  const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  // 将几何体添加到场景中
+  scene.add(cube);
 
-// 使用渲染器，通过相机将场景渲染进来
-renderer.render(scene, camera);
-function a(){
-  requestAnimationFrame(a)
-  cube.position.x += 0.01
-  cube.position.y += 0.01
-  cube.position.z += 0.01
-  renderer.render(scene,camera)
+  // 初始化渲染器
+  const renderer = new THREE.WebGLRenderer();
+  // 设置渲染的尺寸大小
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  // console.log(renderer);
+  // 将webgl渲染的canvas内容添加到body
+  const container = document.getElementById('three-js-container');
+  container.appendChild(renderer.domElement);
+
+  // 使用渲染器，通过相机将场景渲染进来
+  renderer.render(scene, camera);
+
+  function a() {
+    requestAnimationFrame(a)
+    cube.position.x += 0.01
+    cube.position.y += 0.01
+    cube.position.z += 0.01
+    renderer.render(scene, camera)
   }
+
   a()
+})
+
+
 </script>
 <template>
-<div></div>
+  <div id="three-js-container" />
 </template>
-<style>
-*{
-  margin: 0;
-  padding: 0;
 
+<style scoped>
+#three-js-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-canvas{
-  /* display: block; */
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 800px;
-  height: 800px;
-  }
 </style>
